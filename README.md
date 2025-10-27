@@ -1,4 +1,4 @@
-# AART Consultancy Time Logger App
+# Daily Time Logger App
 
 A modern, mobile-first Progressive Web App (PWA) for tracking employee work hours with automatic Google Sheets integration.
 
@@ -37,8 +37,7 @@ A modern, mobile-first Progressive Web App (PWA) for tracking employee work hour
 ├── lib/
 │   └── google-sheets.ts      # Google Sheets API integration
 ├── public/
-│   ├── images/
-│   │   └── aart-logo.png     # Company logo
+│   ├── images/               # Image assets
 │   └── animations/           # Lottie animation files
 └── GOOGLE_SHEETS_SETUP.md    # Detailed setup instructions
 \`\`\`
@@ -178,8 +177,8 @@ Users can install the app on their mobile devices:
 
 ## Support
 
-For issues or questions, contact AART Consultancy support.
+For issues or questions, please open an issue on GitHub.
 
 ## License
 
-Proprietary - AART Consultancy
+MIT License - See LICENSE file for details
