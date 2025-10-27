@@ -1,52 +1,62 @@
-# Daily Time Logger App
+# 🕒 Daily Time Logger App
 
-A modern, mobile-first Progressive Web App (PWA) for tracking employee work hours with automatic Google Sheets integration.
+A sleek, **mobile-first Progressive Web App (PWA)** designed to simplify employee time tracking with **automatic Google Sheets integration**. Perfect for organizations looking for an easy and automated attendance solution.
 
-## Features
+---
 
-- **Employee Time Tracking**: Simple login/logout system with employee code authentication
-- **Real-time Clock**: Displays current time and date in Toronto timezone
-- **Google Sheets Integration**: Automatically logs all time entries to a Google Spreadsheet
-- **Animated UI**: Engaging Lottie animations for better user experience
-- **Mobile-First Design**: Optimized for mobile devices with PWA capabilities
-- **Dark Theme**: Modern dark interface with cyan/blue accents
+## ✨ Features
 
-## Tech Stack
+- **🔐 Employee Time Tracking** — Simple login/logout system with employee code authentication  
+- **⏰ Real-time Clock** — Displays current time and date in Toronto timezone  
+- **📊 Google Sheets Integration** — Automatically logs all entries to a Google Spreadsheet  
+- **🎬 Animated UI** — Engaging Lottie animations for a delightful user experience  
+- **📱 Mobile-First Design** — Fully optimized for mobile devices with PWA support  
+- **🌙 Dark Theme** — Modern dark mode interface with cyan/blue accents  
 
-- **Framework**: Next.js 16 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **UI Components**: shadcn/ui
-- **Animations**: Lottie (lottie-web)
-- **Backend**: Google Apps Script (for Sheets integration)
+---
 
-## Project Structure
+## 🧠 Tech Stack
 
-\`\`\`
+| Category | Technology |
+|-----------|-------------|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS v4 |
+| **UI Components** | shadcn/ui |
+| **Animations** | Lottie (lottie-web) |
+| **Backend** | Google Apps Script (Google Sheets integration) |
+
+---
+
+## 📂 Project Structure
+
+```bash
 ├── app/
-│   ├── page.tsx              # Main application logic
-│   ├── layout.tsx            # Root layout with fonts
-│   └── globals.css           # Global styles and design tokens
+│   ├── page.tsx                  # Main application logic
+│   ├── layout.tsx                # Root layout with fonts
+│   └── globals.css               # Global styles and tokens
 ├── components/
-│   ├── title-bar.tsx         # App header with logo
+│   ├── title-bar.tsx             # App header with logo
 │   ├── employee-code-entry.tsx   # Login screen
-│   ├── time-display.tsx      # Clock display
+│   ├── time-display.tsx          # Clock display
 │   ├── log-in-out-buttons.tsx    # Time logging buttons
-│   ├── modal-popup.tsx       # Success modals
-│   └── footer-status.tsx     # Footer with version info
+│   ├── modal-popup.tsx           # Success modals
+│   └── footer-status.tsx         # Footer with version info
 ├── lib/
-│   └── google-sheets.ts      # Google Sheets API integration
+│   └── google-sheets.ts          # Google Sheets API integration
 ├── public/
-│   ├── images/               # Image assets
-│   └── animations/           # Lottie animation files
-└── GOOGLE_SHEETS_SETUP.md    # Detailed setup instructions
-\`\`\`
+│   ├── images/                   # Image assets
+│   └── animations/               # Lottie animation files
+└── GOOGLE_SHEETS_SETUP.md        # Google Apps Script setup instructions
+```
 
-## Setup Instructions
+---
 
-### 1. Clone and Install
+## ⚙️ Setup Instructions
 
-\`\`\`bash
+### 1️⃣ Clone and Install
+
+```bash
 # Clone the repository
 git clone <repository-url>
 
@@ -55,130 +65,148 @@ npm install
 
 # Run development server
 npm run dev
-\`\`\`
+```
 
-### 2. Configure Google Sheets Integration
+---
+
+### 2️⃣ Configure Google Sheets Integration
 
 #### Step 1: Prepare Your Google Sheet
 
-1. Open your Google Sheet: [Your Sheet URL]
-2. Create a sheet named **"Master"**
-3. Add the following headers in Row 1:
-   - Column A: `Sr. No.`
-   - Column B: `Employee Code`
-   - Column C: `Date`
-   - Column D: `Type`
-   - Column E: `Time`
+1. Open your Google Sheet: [Your Sheet URL]  
+2. Create a sheet named **"Master"**  
+3. Add the following headers in Row 1:  
+   - Column A: `Sr. No.`  
+   - Column B: `Employee Code`  
+   - Column C: `Date`  
+   - Column D: `Type`  
+   - Column E: `Time`  
 
 #### Step 2: Deploy Google Apps Script
 
-1. In your Google Sheet, go to **Extensions > Apps Script**
-2. Delete any existing code
-3. Copy the script from `GOOGLE_SHEETS_SETUP.md`
-4. Click **Deploy > New deployment**
-5. Select **Web app** as deployment type
-6. Set:
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-7. Click **Deploy** and copy the Web App URL
+1. Go to **Extensions → Apps Script** in your Google Sheet  
+2. Delete any existing code  
+3. Copy the script from `GOOGLE_SHEETS_SETUP.md`  
+4. Click **Deploy → New Deployment**  
+5. Select **Web app** as deployment type  
+6. Configure as follows:  
+   - Execute as: **Me**  
+   - Who has access: **Anyone**  
+7. Click **Deploy** and copy the **Web App URL**  
 
 #### Step 3: Add Environment Variable
 
-Add the Web App URL to your environment variables:
+Add your Web App URL to `.env.local`:
 
-\`\`\`bash
-# .env.local
+```bash
 NEXT_PUBLIC_GOOGLE_SHEETS_URL=your-web-app-url-here
-\`\`\`
+```
 
-Or add it through the v0 UI:
-- Open the **Vars** section in the sidebar
-- Add `NEXT_PUBLIC_GOOGLE_SHEETS_URL` with your Web App URL
+Or in **v0.dev**, go to **Vars** in the sidebar and add it there.
 
-### 3. Run the Application
+---
 
-\`\`\`bash
+### 3️⃣ Run the Application
+
+```bash
 npm run dev
-\`\`\`
+```
 
-Visit `http://localhost:3000` to see the app.
+Then visit: **http://localhost:3000**
 
-## Usage
+---
+
+## 👩‍💼 Usage
 
 ### For Employees
 
-1. **Enter Employee Code**: On the home screen, enter your unique employee code
-2. **Log In**: Click the "Log In" button when starting work
-3. **Log Out**: Click the "Log Out" button when finishing work
-4. **View Confirmation**: Success modals confirm each action
+1. **Enter Employee Code** — Enter your unique employee ID.  
+2. **Log In** — Tap *“Log In”* at the start of your work shift.  
+3. **Log Out** — Tap *“Log Out”* when leaving.  
+4. **Confirmation** — A success modal confirms every action.  
 
 ### Time Logging Format
 
-All times are logged in Toronto timezone (America/Toronto) in 12-hour format:
-- **Date**: MM/DD/YYYY
-- **Time**: HH:MM AM/PM
-- **Type**: "In" or "Out"
+All times are logged in **America/Toronto** timezone using 12-hour format:  
+- **Date:** MM/DD/YYYY  
+- **Time:** HH:MM AM/PM  
+- **Type:** “In” or “Out”  
 
-### Google Sheets Output
+### Google Sheets Output Example
 
-Each time entry creates a new row:
+| Sr. No. | Employee Code | Date | Type | Time |
+|----------|----------------|------------|------|----------|
+| 1 | 001 | 10/27/2025 | In | 9:00 AM |
+| 2 | 001 | 10/27/2025 | Out | 5:30 PM |
 
-| Sr. No. | Employee Code | Date       | Type | Time     |
-|---------|---------------|------------|------|----------|
-| 1       | 001           | 10/27/2025 | In   | 9:00 AM  |
-| 2       | 001           | 10/27/2025 | Out  | 5:30 PM  |
+---
 
-## Environment Variables
+## 🔑 Environment Variables
 
 | Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Google Apps Script Web App URL | Yes |
+|-----------|-------------|-----------|
+| `NEXT_PUBLIC_GOOGLE_SHEETS_URL` | Google Apps Script Web App URL | ✅ Yes |
 
-## Deployment
+---
+
+## 🚀 Deployment
 
 ### Deploy to Vercel
 
-1. Click the **Publish** button in v0
-2. Or push to GitHub and connect to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy
+1. Click the **Publish** button in v0  
+2. Or push the repo to GitHub and connect it to **Vercel**  
+3. Add your environment variables in Vercel dashboard  
+4. Deploy! 🎉  
 
-### PWA Installation
+---
 
-Users can install the app on their mobile devices:
-1. Open the app in a mobile browser
-2. Tap "Add to Home Screen"
-3. Use like a native app
+## 📲 PWA Installation
 
-## Troubleshooting
+Users can install the app directly on their devices:
 
-### Time Not Logging
+1. Open in a mobile browser  
+2. Tap **“Add to Home Screen”**  
+3. Launch it like a native app  
 
-- Verify the Google Apps Script is deployed as a **new deployment** (not just saved)
-- Check that the Web App URL is correct in environment variables
-- Ensure the sheet name is exactly **"Master"**
-- Check browser console for error messages
+---
 
-### Wrong Timezone
+## 🧩 Troubleshooting
 
-- The app uses Toronto timezone (America/Toronto)
-- Verify your browser allows timezone detection
-- Check that the Google Apps Script is using the time values from the request
+### 🕐 Time Not Logging
+- Ensure the Google Apps Script is **deployed** (not just saved)  
+- Verify `NEXT_PUBLIC_GOOGLE_SHEETS_URL` is correct  
+- Confirm the sheet name is **Master**  
+- Check browser console for any fetch or CORS errors  
 
-### Animations Not Loading
+### 🌍 Wrong Timezone
+- The app uses **America/Toronto** timezone  
+- Ensure browser timezone settings are correct  
+- Verify Google Apps Script receives timestamp from the client request  
 
-- Ensure Lottie JSON files are in `public/animations/`
-- Check browser console for 404 errors
-- Verify the animation paths in components
+### 🎞️ Animations Not Loading
+- Ensure Lottie JSON files are inside `/public/animations/`  
+- Check console for missing file (404) errors  
+- Verify animation import paths in components  
 
-## Version
+---
 
-**v1.0** - Initial Release
+## 📱 Screenshots
+![All Screens](./public/screenshots/merged_ss.png)
 
-## Support
+---
 
-For issues or questions, please open an issue on GitHub.
+## 🧾 Version
 
-## License
+**v1.0** — Initial Release
 
-MIT License - See LICENSE file for details
+---
+
+## 💬 Support
+
+For issues or suggestions, please open an issue on GitHub.
+
+---
+
+## 📜 License
+
+**MIT License** — See `LICENSE` file for details.
