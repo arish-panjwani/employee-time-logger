@@ -3,6 +3,9 @@
 A sleek, **mobile-first Progressive Web App (PWA)** designed to simplify employee time tracking with **automatic Google Sheets integration**. Perfect for organizations looking for an easy and automated attendance solution.
 
 ---
+![All Screens](./public/screenshots/merged_ss.png)
+
+---
 
 ## ✨ Features
 
@@ -187,11 +190,6 @@ Users can install the app directly on their devices:
 - Ensure Lottie JSON files are inside `/public/animations/`  
 - Check console for missing file (404) errors  
 - Verify animation import paths in components  
-
----
-
-## 📱 Screenshots
-![All Screens](./public/screenshots/merged_ss.png)
 
 ---
 
